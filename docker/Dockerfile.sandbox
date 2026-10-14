@@ -1,0 +1,8 @@
+# Hardened execution environment for model-written code.
+# Run by analyst/sandbox/docker.py with: no network, read-only root, memory/CPU/pid limits.
+FROM python:3.12-slim
+
+RUN pip install --no-cache-dir pandas numpy \
+    && useradd --create-home --uid 10001 sandbox
+USER sandbox
+WORKDIR /work

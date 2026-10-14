@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+*.pyc
+# real model runs in evals/results/ are meant to be committed; oracle pipeline checks are not
+evals/results/*_oracle.json
